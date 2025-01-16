@@ -14,7 +14,7 @@
             "env": {
                 "PYTHONPATH": "${cwd}"
             },
-            "args": ["./input/input_test.kmz"]
+            "args": ["./input/rod_test_2025.kmz"]
         }
     ]
 }

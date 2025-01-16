@@ -1,3 +1,6 @@
+from app import App
+import tkinter as tk
+
 def main():
     import argparse
     from polygon_cleaner import PolygonCleaner
@@ -11,6 +14,14 @@ def main():
     cleaner.remove_duplicates()
     cleaner.remove_pictures()
     cleaner.save_cleaned_kmz()
+    cleaner.save_kml()
+    cleaner.cleanup()
 
 if __name__ == '__main__':
-    main()
+    import sys
+    if len(sys.argv) > 1:
+        main()
+    else:
+        root = tk.Tk()
+        app = App(root)
+        root.mainloop()
