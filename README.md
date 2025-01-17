@@ -1,6 +1,6 @@
 # Polygon Cleaner
 
-Polygon Cleaner is a Python application designed to clean duplicate polygons from KMZ files and remove outdated picture references. This tool is useful for users who frequently work with geographic data and need to maintain clean datasets.
+Polygon Cleaner is a Python application designed to clean duplicate polygons from KMZ files and remove outdated picture references. This tool is useful for users who frequently work with geographic data and need to maintain clean datasets. Developed by Brenda Manrique. 
 
 ## Features
 
@@ -26,6 +26,8 @@ polygon-cleaner
    ```
    git clone <repository-url>
    cd polygon-cleaner
+   python3 -m venv venv
+   source venv/bin/activate
    ```
 
 2. Install the required dependencies:
@@ -38,10 +40,17 @@ polygon-cleaner
 To run the application, use the following command:
 
 ```
-python src/main.py <path_to_kmz_file>
+python src/app.py
 ```
 
 Replace `<path_to_kmz_file>` with the path to your KMZ file.
+
+## Build the Executable
+
+Run PyInstaller with the spec file to create the standalone executable:
+
+```pyinstaller polygon_cleaner.spec```
+
 
 ## Contributing
 

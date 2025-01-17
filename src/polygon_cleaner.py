@@ -7,18 +7,18 @@ import sys
 class PolygonCleaner:
     def __init__(self, kmz_file):
         self.kmz_file = kmz_file
-        self.temp_dir = 'temp_kmz'
-        self.output_dir = os.path.join(self.get_executable_path(), 'output')
+        self.temp_dir = os.path.join(self.get_writable_path(), 'temp_kmz')
+        self.output_dir = os.path.join(self.get_writable_path(), 'PolygonCleanerOutput')
         self.polygons = self.load_polygons()
 
-    def get_executable_path(self):
+    def get_writable_path(self):
         if getattr(sys, 'frozen', False):
             # If the application is run as a bundle, the PyInstaller bootloader
             # extends the sys module by a flag frozen=True and sets the app 
             # path into variable _MEIPASS'.
-            return os.path.dirname(sys.executable)
+            return os.path.expanduser('~')
         else:
-            return os.path.dirname(os.path.abspath(__file__))
+            return os.path.expanduser('~')
 
     def load_polygons(self):
         # Create the temporary directory if it does not exist
@@ -121,3 +121,12 @@ class PolygonCleaner:
     def cleanup(self):
         if os.path.exists(self.temp_dir):
             shutil.rmtree(self.temp_dir)
+
+# Example usage
+if __name__ == '__main__':
+    cleaner = PolygonCleaner('/Users/manriqub/GMapsCleanup/input/rod_test_2025.kmz')
+    cleaner.remove_duplicates()
+    cleaner.remove_pictures()
+    cleaner.save_cleaned_kmz()
+    cleaner.save_kml()
+    cleaner.cleanup()

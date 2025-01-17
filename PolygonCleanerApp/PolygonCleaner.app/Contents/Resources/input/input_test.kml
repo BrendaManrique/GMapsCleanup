@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Example KMZ</name>
+    <!-- Duplicated Polygons -->
+    <Placemark>
+      <name>Polygon 1</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.0,37.0,0 -122.0,37.1,0 -121.9,37.1,0 -121.9,37.0,0 -122.0,37.0,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Polygon 1 Duplicate</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.0,37.0,0 -122.0,37.1,0 -121.9,37.1,0 -121.9,37.0,0 -122.0,37.0,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <!-- Add more duplicated and unduplicated polygons here -->
+    <!-- Unduplicated Polygons -->
+    <Placemark>
+      <name>Polygon 2</name>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.1,37.0,0 -122.1,37.1,0 -122.0,37.1,0 -122.0,37.0,0 -122.1,37.0,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <!-- Add more unduplicated polygons here -->
+    <!-- Image References -->
+    <GroundOverlay>
+      <name>Example Image</name>
+      <Icon>
+        <href>images/example.jpg</href>
+      </Icon>
+      <LatLonBox>
+        <north>37.1</north>
+        <south>37.0</south>
+        <east>-121.9</east>
+        <west>-122.0</west>
+      </LatLonBox>
+    </GroundOverlay>
+  </Document>
+</kml>
