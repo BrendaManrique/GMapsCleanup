@@ -37,13 +37,20 @@ polygon-cleaner
 
 ## Usage
 
-To run the application, use the following command:
+To run and trigger the application, use the following command:
 
 ```
 python src/app.py
 ```
 
 Replace `<path_to_kmz_file>` with the path to your KMZ file.
+
+To run locally:
+
+```
+python ./src/polygon_cleaner.py
+```
+And replace the file path inside the __main__, in the line cleaner = PolygonCleaner().
 
 ## Build the Executable
 
