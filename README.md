@@ -58,6 +58,7 @@ Run PyInstaller with the spec file to create the standalone executable:
 
 ```pyinstaller polygon_cleaner.spec```
 
+```pyinstaller --onefile --windowed --name "PolygonCleaner" src/app.py```
 
 ## Contributing
 
